@@ -1,108 +1,201 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-  <title>Форма</title>
-  <style>
-    .error {
-      color: red;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои статьи</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-  <h1>Форма</h1>
-  <form id="myForm">
-    <label for="subject">Тема:</label>
-    <input type="text" id="subject" name="subject" required>
-    <br>
-    
-    <label for="name">Имя:</label>
-    <input type="text" id="name" name="name" required>
-    <br>
-    
-    <label for="email">E-mail:</label>
-    <input type="email" id="email" name="email" required>
-    <br>
-    
-    <label for="text">Текст:</label>
-    <textarea id="text" name="text" required></textarea>
-    <br>
-    
-    <button type="submit">Отправить</button>
-  </form>
 
-  <script>
-    const form = document.querySelector('#myForm');
-    form.addEventListener('submit', function(event) {
-      event.preventDefault(); // Отменяем отправку формы по умолчанию
-      
-      const subject = document.querySelector('#subject').value.trim();
-      const name = document.querySelector('#name').value.trim();
-      const email = document.querySelector('#email').value.trim();
-      const text = document.querySelector('#text').value.trim();
-      
-      let isValid = true;
-      
-      if (subject === '') {
-        showErrorMessage('subject', 'Пожалуйста, введите тему');
-        isValid = false;
-      } else {
-        hideErrorMessage('subject');
-      }
-      
-      if (name === '') {
-        showErrorMessage('name', 'Пожалуйста, введите имя');
-        isValid = false;
-      } else {
-        hideErrorMessage('name');
-      }
-      
-      if (email === '') {
-        showErrorMessage('email', 'Пожалуйста, введите E-mail');
-        isValid = false;
-      } else if (!validateEmail(email)) {
-        showErrorMessage('email', 'Пожалуйста, введите корректный E-mail');
-        isValid = false;
-      } else {
-        hideErrorMessage('email');
-      }
-      
-      if (text === '') {
-        showErrorMessage('text', 'Пожалуйста, введите текст');
-        isValid = false;
-      } else {
-        hideErrorMessage('text');
-      }
-      
-      if (isValid) {
-        form.submit();
-      }
-    });
+<body>
+    <header>
+        <h1>Комплектующие для пк</h1>
+        <img width="500px" src="img/o9ZxROL1LKI.jpg"
+        alt="логотип">
+        <nav>
+            <ul class="main-menu">
+                <li><a href="index.html">На главную</a></li>
+                <li><a href="index.html">Мои статьи</a></li>
+                <li><a href="article5.html">Обратная связь</a></li>
+                <head>
+                    <title>Форма</title>
+                    <style>
+                      body {
+                        font-family: Arial, sans-serif;
+                      }
+                      
+                      h1 {
+                        margin-bottom: 20px;
+                      }
+                      
+                      form {
+                        width: 400px;
+                      }
+                      
+                      label {
+                        display: block;
+                        margin-bottom: 10px;
+                      }
+                      
+                      input[type="text"],
+                      input[type="email"],
+                      textarea {
+                        width: 100%;
+                        padding: 5px;
+                        margin-bottom: 10px;
+                      }
+                      
+                      .error {
+                        color: red;
+                      }
+                      
+                      button {
+                        padding: 10px 20px;
+                        background-color: #4CAF50;
+                        color: white;
+                        border: none;
+                        cursor: pointer;
+                      }
+                      
+                      .clearfix::after {
+                        content: "";
+                        display: table;
+                        clear: both;
+                      }
+                    </style>
+                  </head>
+                    <h1>Форма</h1>
+                    <form id="myForm">
+                        
+                        <head>
+                            
+                            
+                            <title>Всплывающий поиск</title>
+                            <style>
+                              .search-container {
+                                position: relative;
+                                width: 400px;
+                              }
+                          
+                              #search-input {
+                                width: 100%;
+                              }
+                          
+                              .search-results {
+                                display: none;
+                                position: absolute;
+                                top: 100%;
+                                left: 0;
+                                width: 100%;
+                                background-color: #FFFFFF;
+                                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                                padding: 12px;
+                              }
+                          
+                              .search-results ul {
+                                list-style-type: none;
+                                padding: 0;
+                                margin: 0;
+                              }
+                          
+                              .search-results li a {
+                                display: block;
+                                text-decoration: none;
+                                color: #333333;
+                                padding: 4px;
+                              }
+                          
+                              .search-results li a:hover {
+                                background-color: #F5F5F5;
+                              }
+                            </style>
+                          </head>
+                          <body>
+                            <div class="search-container">
+                                <label for="name">Тема:</label>
+                              <input type="text" id="search-input" placeholder="Введите тему">
+                              <div class="search-results">
+                                <ul>
+                                  <li><a href="#">Проблемы с доставкой</a></li>
+                                  <li><a href="#">В какие города доставляются наши компьютеры?</a></li>
+                                  <li><a href="#">Некорректно работает сайт</a></li>
+                                  <li><a href="#">Как заказать компьютер?</a></li>
+                                  <li><a href="#">Заказ не пришел в срок</a></li>
+                                  <li><a href="#">Что делать если оплата не проходит?</a></li>
+                                  <li><a href="#">Кать оплатить заказ?</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          
+                            <script>
+                              document.addEventListener('DOMContentLoaded', function() {
+                                var searchInput = document.getElementById('search-input');
+                                var searchResults = document.querySelector('.search-results');
+                          
+                                searchInput.addEventListener('input', function() {
+                                  var searchQuery = searchInput.value.toLowerCase();
+                                  var results = searchResults.querySelectorAll('li');
+                          
+                                  for (var i = 0; i < results.length; i++) {
+                                    var resultText = results[i].textContent.toLowerCase();
+                                    if (resultText.includes(searchQuery)) {
+                                      results[i].style.display = 'block';
+                                    } else {
+                                      results[i].style.display = 'none';
+                                    }
+                                  }
+                          
+                                  if (searchQuery.length > 0) {
+                                    searchResults.style.display = 'block';
+                                  } else {
+                                    searchResults.style.display = 'none';
+                                  }
+                                });
+                          
+                                document.addEventListener('click', function(event) {
+                                  var targetElement = event.target;
+                          
+                                  if (!(searchInput.contains(targetElement) || searchResults.contains(targetElement))) {
+                                    searchResults.style.display = 'none';
+                                  }
+                                });
+                              });
+                            </script>
+                      
+                      <div class="clearfix">
+                        <label for="name">Имя:</label>
+                        <input type="text" id="name" name="name" placeholder="Введите ваше имя" required>
+                      </div>
+                      
+                      <div class="clearfix">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" placeholder="Введите ваш E-mail" required>
+                      </div>
+                      
+                      <div class="clearfix">
+                        <label for="text">Текст:</label>
+                        <input type="text" id="text" name="text" placeholder="Введите ваше сообщение" required>
+                      </div>
+                      
+                      <div class="clearfix">
+                        <button type="submit">Отправить</button>
+                      </div>
+                    </form>
+                  
+                    <script>
+                    </script>
+                  </body>
+                  </html>        
+
+
+        <p>&copysr; Терехов Григорий, 2004</p>
+        <p>&copy; Вы также можете найти меня <a class="footer-link" a href="https://www.reddit.com/r/OutOfTheLoop/comments/7q6mn9/what_is_plat_in_the_context_of_gaming/" target="_blank">здесь</a></p>
+        <a href="https://m.vk.com/" target="_blank"><img width='20px' src="img/VK_Compact_Logo_(2021-present).svg.png" alt=""></a>
+        <a href="https://discord.com/" target="_blank"><img width='20px' src="img/unnamed.png" alt=""></a>
+    </footer>
     
-    function validateEmail(email) {
-      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      return re.test(String(email).toLowerCase());
-    }
-    
-    function showErrorMessage(fieldName, message) {
-      const input = document.querySelector('#' + fieldName);
-      const errorElement = document.createElement('span');
-      errorElement.classList.add('error');
-      errorElement.textContent = message;
-      
-      const existingError = document.querySelector('#' + fieldName + 'Error');
-      if (existingError) {
-        return;
-      }
-      
-      input.parentNode.appendChild(errorElement);
-    }
-    
-    function hideErrorMessage(fieldName) {
-      const existingError = document.querySelector('#' + fieldName + 'Error');
-      if (existingError) {
-        existingError.remove();
-      }
-    }
-  </script>
 </body>
 </html>
+
+
